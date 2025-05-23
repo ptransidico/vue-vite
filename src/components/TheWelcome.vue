@@ -5,8 +5,16 @@ import ToolingIcon from './icons/IconTooling.vue'
 import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
+import UiButton from './UiButton.vue'
 
 const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
+
+const emit = defineEmits(['evtClick']) // Define the emit event
+
+function emitEvtClick() { // Emit the event when the button is clicked
+  emit('evtClick') // Emit the event
+}
+
 </script>
 
 <template>
@@ -19,6 +27,8 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     Vue’s
     <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
     provides you with all information you need to get started.
+    <UiButton title="test" @evtClick="emitEvtClick" classe="btn"></UiButton>
+
   </WelcomeItem>
 
   <WelcomeItem>
@@ -45,6 +55,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     More instructions are available in
     <a href="javascript:void(0)" @click="openReadmeInEditor"><code>README.md</code></a
     >.
+    <UiButton title="Prova" @evtClick="emitEvtClick"></UiButton>
   </WelcomeItem>
 
   <WelcomeItem>
@@ -61,6 +72,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     you need more resources, we suggest paying
     <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">Awesome Vue</a>
     a visit.
+    <UiButton title="Prova 2" @evtClick="emitEvtClick"></UiButton>
   </WelcomeItem>
 
   <WelcomeItem>
@@ -79,6 +91,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     Bluesky account or the
     <a href="https://x.com/vuejs" target="_blank" rel="noopener">@vuejs</a>
     X account for latest news in the Vue world.
+    <UiButton title="Prova 3" @evtClick="emitEvtClick"></UiButton>
   </WelcomeItem>
 
   <WelcomeItem>
@@ -90,5 +103,6 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     As an independent project, Vue relies on community backing for its sustainability. You can help
     us by
     <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
+    <UiButton title="Prova 4" @evtClick="emitEvtClick"></UiButton>
   </WelcomeItem>
 </template>

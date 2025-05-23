@@ -1,19 +1,30 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import UiButton from './components/UiButton.vue'
+import { ref } from 'vue'
+const count = ref(0);
+
+const increment = () => {
+    count.value++;
+};
+
 </script>
 
 <template>
   <header>
+    
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
     <div class="wrapper">
+      <p>Counter {{ count }}</p>
       <HelloWorld msg="You did it!" />
+      <UiButton title="click me" @evtClick="increment" classe="btn2"></UiButton>
     </div>
   </header>
 
   <main>
-    <TheWelcome />
+    <TheWelcome @evtClick="increment" />
+  
   </main>
 </template>
 
